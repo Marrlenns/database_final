@@ -1,0 +1,53 @@
+CREATE DATABASE eCommerce;
+USE eCommerce;
+	
+CREATE TABLE product_table (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    description TEXT,
+    price DECIMAL(10, 2),
+    sku VARCHAR(50),
+    title VARCHAR(255),
+    category_id INT,
+    image_id INT,
+    user_id INT
+);
+
+CREATE TABLE order_table (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    create_date DATETIME,
+    price DECIMAL(10, 2),
+    quantity INT,
+    sku VARCHAR(50),
+    title VARCHAR(255),
+    total DECIMAL(12, 2),
+    image_id INT,
+    user_id INT
+);
+
+CREATE TABLE cart_item_table (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    price DECIMAL(10, 2),
+    quantity INT,
+    sku VARCHAR(50),
+    subtotal DECIMAL(12, 2),
+    title VARCHAR(255),
+    cart_id INT,
+    image_id INT
+);
+
+CREATE TABLE cart_iteme (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT;
+);
+
+CREATE TABLE image_table (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    path VARCHAR(255,
+    product_id INT
+);
+
+CREATE TABLE category_table (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255)
+);
